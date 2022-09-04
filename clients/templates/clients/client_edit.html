@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} {{client.nome}} {% endblock title %}
+
+{% block content %}
+
+<h1>Editar cliente "{{client.nome}}" cadastrado no sistema</h1>
+
+<form class="form-control1" method="post">
+    {% csrf_token %}
+
+    {{form|crispy}}
+<div class="buttons">
+    <input class="btn btn-primary" type="submit" value="Editar cliente">
+    <a href="{% url 'dashboard' %}"><button class="btn btn-secondary" type="button">Voltar</button></a>
+    <a href="/deleteClient/{{client.id}}" class="btn-delete"><button class="btn btn-danger">  Excluir</button></a>
+</div>
+    
+</form>
+  
+{% endblock content %}

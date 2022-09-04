@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="title-home">
+    <h1>Este site é para você que precisa cadastrar seus clientes de forma fácil e <span>rápida</span> <span id="square">.</span> </h1>
+</div>
+<div class="redirect">
+    <h1><a href="/dashboard/">CLIQUE AQUI PARA SER REDIRECIONADO PARA O DASHBOARD</a> </h1>
+</div>
+
+
+{% else %}
+<div class="container">
+    <div class="title-home">
+        <h1>Este site é para você que precisa cadastrar seus clientes de forma fácil e <span>rápida</span> <span id="square">.</span> </h1>
+    </div>
+
+    <div class="title-register">
+        <h1><span>Cadastre-se</span>  agora para usufruir dos nossos serviços.</h1>
+    </div>
+
+    <div class="title-login">
+        <h1>Já possui uma conta? <a href="/accounts/login"> Clique aqui</a></h1>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock content %}

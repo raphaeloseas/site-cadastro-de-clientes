@@ -1,0 +1,107 @@
+{% extends "main.html" %}
+
+{% block title %} Dashboard {% endblock title %}
+
+{% block content %}
+
+<div class="container-dashboard-clients" id="clients-created">
+    <h2>Clientes cadastrados atualmente</h2>
+        <span> {{cont_client}} </span>  
+
+    <h2>Clientes cadastrados nos últimos 1 minutos</h2>
+        <span> {{cont_client_recent}} </span> 
+</div>
+
+
+<div class="div-create-client-btn">
+    <a href="{% url 'create-client' %}"> <button class="btn-create-client"><i class="fas fa-plus"> Criar novo cliente</i></button> </a>
+</div>
+
+<div class="ad">
+    <div class="col-9 search-div">
+        <form method="get" id="search-form">
+            <input class="form-control" type="text" id="search" name="search_nome" placeholder="Pesquisar por nome" value="{{ request.GET.search_nome }}">
+            <i class="fas fa-search" id="btn-search"></i>
+        </form>
+    
+        <form method="get" id="search-form1">
+            <input class="form-control" type="text" id="search" name="search_id" placeholder="Pesquisar por ID" value="{{ request.GET.search_id }}">
+            <i class="fas fa-search" id="btn-search1"></i>
+        </form>
+            
+        <form method="get" id="search-form2">
+            <input class="form-control" type="text" id="search" name="search_email" placeholder="Pesquisar por e-mail" value="{{ request.GET.search_email }}">
+            <i class="fas fa-search" id="btn-search2"></i>
+        </form>
+            
+        
+    </div>
+</div>
+
+<div class="div-messages" id="messages">
+    {% if messages %}
+
+    <ul class="messages" id="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="alert alert-{{message.tags}}" id="messages" {% endif %} >{{ message }}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+</div>
+
+    <h3 id="title-table">Lista de clientes cadastrado no banco de dados</h3>
+    <div class="table-div">
+        <table class="table">
+            
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Cidade</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th id="actions">Ações</th>
+                
+        
+            </tr>
+            <tbody>
+                    {% for clientes in clients  %}
+                <tr>
+                    <td>{{clientes.id}}</td>
+                    <td>{{clientes.nome}}</td>
+                    <td>{{clientes.cidade}}</td>
+                    <td>{{clientes.telefone}}</td>
+                    <td>{{clientes.email}}</td>
+                    <td id="actions"><a href="/editClient/{{clientes.id}}"><button class="fas fa-edit">  Editar</button></a>
+                        <a href="/deleteClient/{{clientes.id}}" class="btn-delete"><button class="fas fa-trash">  Excluir</button></a>
+                        <a href="/client/{{clientes.id}}"><button class="fas fa-flag">  Visualizar</button></a>
+                    </td> 
+                </tr> 
+                    
+                    {%  endfor %}
+                                
+            </tbody>
+        </thead>
+        </table> 
+    </div>
+    <div class="pagination">
+        <span class="step-link">
+            {% if clients.has_previous %}
+                <a href="?page={{ clients.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+            {% endif %}
+
+            <span class="page-atual">
+                Página {{clients.number}} de {{clients.paginator.num_pages}}
+            </span>
+
+            {% if clients.has_next %}
+                <a href="?page={{ clients.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+            {% endif %}
+        </span>
+    </div>
+
+   
+
+  
+{% endblock content %}

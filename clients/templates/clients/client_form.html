@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Cadastro de clientes {% endblock title %}
+
+{% block content %}
+
+<h1>Cadastro de clientes</h1>
+
+
+<div class="div-messages" id="messages">
+    {% if messages %}
+
+    <ul class="messages" id="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="alert alert-{{message.tags}}" id="messages" {% endif %} >{{ message }}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+</div>
+
+
+<form class="form-control1" method="post">
+    {% csrf_token %}
+
+    {{form|crispy}}
+
+    <div class="buttons">
+        <input class="btn btn-success" type="submit" value="Cadastrar">
+        <input class="btn btn-primary" type="reset" value="Limpar">
+        <a href="{% url 'dashboard' %}"><button class="btn btn-secondary" type="button">Voltar</button></a>
+    </div>
+</form>
+  
+{% endblock content %}

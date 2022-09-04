@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+
+{% block title %} {{client.nome}} {% endblock title %}
+
+{% block content %}
+
+<div class="client-information">
+    <h1>{{client.nome}}</h1>
+    <ul>
+        <li><strong>ID no banco de dados:</strong> {{client.id}}</li>
+        <li><strong>Nome:</strong> {{client.nome}}</li>
+        <li><strong>Endereço completo:</strong> {{client.logradouro}}, {{client.numero}}, {{client.bairro}}, {{client.cidade}} - {{client.estado}}</li>
+        <li><strong>Telefone:</strong> {{client.telefone}}</li>
+        <li><strong>E-mail:</strong> {{client.email}}</li>
+        <li><strong>Data de nascimento:</strong> {{client.data_de_nascimento}}</li>
+        <li><strong>Data de criação do cliente:</strong> {{client.data_de_criacao}}</li>
+        <li><strong>Data de update do cliente:</strong> {{client.data_de_update}}</li>
+
+
+        <div class="buttons">
+            <a href="{% url 'dashboard' %}"><button class="btn btn-secondary" type="button">Voltar</button></a>
+            <a href="/editClient/{{client.id}}"><button class="btn btn-primary">  Editar</button></a>
+            <a href="/deleteClient/{{client.id}}" class="btn-delete"><button class="btn btn-danger">  Excluir</button></a>
+        </div>
+       
+        
+        
+
+    </ul>
+</div>
+  
+{% endblock content %}

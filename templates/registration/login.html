@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Dolphin Experience {% endblock title %}
+
+{% block content %}
+<div class="login">
+    <div class="form-register">
+        <h1 class="title-register">Entre na sua conta</h1>
+    <form class="form-control1" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        {{form|crispy}}
+        <button type="submit" class="btn btn-block">Entrar</button>
+
+        <p>Ainda não possui conta? <a href="/accounts/register">Clique aqui para se registrar</a></p>
+        
+    </form>
+    </div>
+</div>
+  
+{% endblock content %}
