@@ -1,7 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+
 }
+
+
 
 /* Top bar dashboard */
 
@@ -81,6 +84,10 @@
 
 .navbar {
   padding: 0;
+  box-shadow: 1px 1px 3px rgb(214, 213, 213);
+  position: fixed;
+  width: 100%;
+  background-color: white;
 }  
 
 .navbar-brand {
@@ -118,7 +125,9 @@
 .form-control {
     margin-bottom: 1rem;
     margin-top: 1rem;
+
 }
+
 
 /* Tabela  */
 
@@ -361,6 +370,8 @@ ul.messages li {
 
 .container-dashboard-clients {
     margin: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
     height: 14rem;
     background-color: rgba(119, 119, 119, 0.137);
     /* border: 0.01rem solid rgba(0, 0, 0, 0.123); */
@@ -385,6 +396,7 @@ ul.messages li {
 
 .title-register {
     font-size: 50px;
+    margin-top: 3rem;
 }
 
 .form-register .btn-block {
@@ -474,3 +486,138 @@ ul.messages li {
     margin: auto;
     margin-top: 4rem;
 }
+
+
+/* Dashboard links */
+
+.btn-quit{
+    font-size: 19px;
+    padding: 1.4rem;
+    border: none;
+    color: rgb(143, 143, 143);
+    transition: color 0.2s ease-out 100ms;
+    background-color: white;
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+    
+}
+
+
+.btn-quit:hover {
+    background-color: rgba(212, 198, 198, 0.411);
+    color: #4a5055;
+    
+}
+
+
+.btn-dashboard {
+    font-size: 19px;
+    padding: 1.4rem;
+    border: none;
+    color: rgb(143, 143, 143);
+    transition: color 0.2s ease-out 100ms;
+    background-color: white;
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+}
+
+.btn-dashboard:hover {
+    background-color: rgba(212, 198, 198, 0.411);
+    color: #4a5055;
+    
+}
+
+.btn-about {
+    font-size: 19px;
+    padding: 1.4rem;
+    border: none;
+    color: rgb(143, 143, 143);
+    transition: color 0.2s ease-out 100ms;
+    background-color: white;
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+}
+
+.btn-about:hover {
+    background-color: rgba(212, 198, 198, 0.411);
+    color: #4a5055;
+}
+
+.btn-links {
+    font-size: 19px;
+    padding: 0.5rem;
+    border: none;
+    color: rgb(143, 143, 143);
+    transition: color 0.2s ease-out 100ms;
+    background-color: white;
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+}
+
+.btn-links:hover {
+    background-color: rgba(212, 198, 198, 0.411);
+    color: #4a5055;
+    
+}
+
+.btn-login {
+    font-size: 23px;
+    padding: 0.2rem;
+    border: none;
+    color: rgb(252, 252, 252);
+    transition: background-color 0.2s ease-out 100ms;
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+    background-color:rgb(27, 87, 177);
+    margin: 0 2px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.btn-login:hover {
+    background-color: rgba(9, 34, 71, 0.897);;
+    color: #ffffff;
+    
+}
+
+
+/* Footer */
+
+.container-footer {
+    width: 100%;
+    background-color: #000000;
+    margin: 0;
+    height: 100%;
+}
+
+.container-content-footer {
+    text-align: center;
+    color: rgb(194, 183, 183);
+    background-color: #000000;
+    height: 100%;
+    padding-top: 80px;
+}
+
+footer {
+    height: 600px;
+}
+
+.container-content-footer a {
+    color: #777;
+}
+
+.container-content-footer li {
+    display: inline-flex;
+    margin: 10px 10px;
+    list-style: none;
+}
+
+/* Banner main */
+
+.image-banner {
+    display: flex;
+    justify-content: center;
+    padding-top: 2.7rem;
+    width: 100%;
+}
+

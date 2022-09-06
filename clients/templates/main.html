@@ -12,7 +12,7 @@
     <title>{% block title %}  {% endblock %}</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'dashboard' %}">Dolphin Experience</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,13 +22,13 @@
             {% if user.is_authenticated %}
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}"><button class="btn btn-block">Dashboard</button></a>
+                <a aria-current="page" href="{% url 'dashboard' %}"><button class="btn-dashboard">Dashboard</button></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/"><button class="btn btn-block">Sobre</button></a>
+                <a  href="/"><button class="btn-about">Sobre</button></a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><button class="btn btn-block">Colocar alguns links</button>
+                <a  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><button class="btn-links">Colocar alguns links</button>
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Action</a></li>
@@ -39,34 +39,38 @@
               </li>
             </ul>
             <div class="d-flex" role="search">
-              <a href="/accounts/logout"><button class="btn btn-block">Sair</button></a>
+              <a href="/accounts/logout"><button class="btn-quit">Sair</button></a>
             </div>
             {% else %}
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}"><button class="btn btn-block">Informações de usuabilidade do site</button></a>
+                  <a aria-current="page" href="{% url 'dashboard' %}"><button class="btn-dashboard">Informações de usuabilidade do site</button></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/"><button class="btn btn-block">Sobre</button></a>
+                  <a href="/"><button class="btn-about">Sobre</button></a>
                 </li>
               </ul>
               <div class="d-flex" role="search">
-                <a href="/accounts/register"><button class="btn btn-block">Cadastrar</button></a>
+                <a href="/accounts/register"><button class="btn-login">Cadastrar</button></a>
               </div>
               <div class="d-flex" role="search">
-                <a href="/accounts/login"><button class="btn btn-block"
-                    style="margin-left: 0.5rem;">Login</button></a>
+                <a href="/accounts/login"><button class="btn-login">Login</button></a>
               </div>
             
             {% endif %}  
           </div>
         </div>
       </nav>
+      <div class="image-banner">
+        <img width="2800px" height="600px" src="{% static 'img/banner.jpg' %}" alt="" srcset="">
+      </div>
     <div class="container">
         {% block content %}
           
         {% endblock content %}
     </div>
+    
+
     
 
 
@@ -75,4 +79,18 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="{% static 'js/js.js' %}"></script>
 </body>
+<footer>
+  <div class="container-footer">
+    <div class="container-content-footer">
+      <h3>Site criado por Raphael Oseas</h3>
+      <p>Minhas redes sociais</p>
+      <ul>
+        <li><a class="link-social-media" href="https://www.facebook.com/raphaeloseasc/"><img height="30px" width="30px" src="{% static 'img/facebook.png' %}"></a></li>
+        <li><a class="link-social-media" href="https://github.com/raphaeloseas"><img height="30px" width="30px" src="{% static 'img/github.png' %}"></a></li>
+        <li><a class="link-social-media" href="https://www.linkedin.com/in/raphaeloseas/"><img height="30px" width="30px" src="{% static 'img/linkedin.png' %}"></a></li>
+        <li><a class="link-social-media" href="https:wa.me/5531980142933"><img height="30px" width="30px" src="{% static 'img/whatsapp.png' %}"></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 </html>

@@ -15,7 +15,7 @@ def dashboard(request):
     clients_list = Client.objects.all().order_by('-data_de_criacao').filter(user=request.user)
 
     cont_client = Client.objects.filter(user=request.user).count()
-    cont_client_recent = Client.objects.filter(data_de_criacao__gt=datetime.datetime.now()-datetime.timedelta(minutes=1), user=request.user).count()
+    cont_client_recent = Client.objects.filter(data_de_criacao__gt=datetime.datetime.now()-datetime.timedelta(days=30), user=request.user).count()
 
     search_nome =  request.GET.get('search_nome')
     search_id =  request.GET.get('search_id')
