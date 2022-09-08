@@ -61,9 +61,14 @@
           </div>
         </div>
       </nav>
+
+      {% if user.is_authenticated %}
+
+      {% else %}
       <div class="image-banner">
-        <img width="2800px" height="600px" src="{% static 'img/banner.jpg' %}" alt="" srcset="">
+        <img width="2800px" height="400px" src="{% static 'img/banner1.png' %}" alt="" srcset="">
       </div>
+      {% endif %}
     <div class="container">
         {% block content %}
           
