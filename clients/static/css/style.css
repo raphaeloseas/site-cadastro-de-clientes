@@ -73,7 +73,7 @@
 }
 
 .container {
-    padding: 4rem 0;
+    padding: 10rem 0;
 }
 
 .navbar.navbar-expand-lg.bg-light {
@@ -101,16 +101,18 @@
     cursor: pointer;
     position: absolute;
     display: inline-block;
-    top: 12px;
+    top: 20px;
     right: 20px;
+    font-size: 20px;
+    color: #777;
 }
 
 #btn-search1 {
-    top: 65px;
+    top: 90px;
 }
 
 #btn-search2 {
-    top: 120px;
+    top: 165px;
 }
 
 .search-div {
@@ -126,6 +128,17 @@
     margin-bottom: 1rem;
     margin-top: 1rem;
 
+}
+
+.search-div input {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 0.8rem 1.2rem;;
+    box-shadow: 1px 1px 6px #0000001c;
+    border: none;
 }
 
 
@@ -214,14 +227,49 @@ table {
 
 .buttons .btn-primary {
     margin-left: 1rem;
+    background-color: rgba(41, 41, 226, 0.822);
+    font-size: 16px;
+    margin: 0px 0px 0px 16px;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: center;
+    width: 120.52px;
+    height: 38.21px;
+    margin-bottom: 3rem;
+}
+
+.buttons .btn-primary:hover {
+    background-color: rgba(50, 50, 255, 0.952);
+}
+
+
+
+.buttons .btn-success {
+    margin-left: 1rem;
+    background-color: rgba(14, 122, 29, 0.822);
+    font-size: 16px;
+    margin: 0px 0px 0px 16px;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: center;
+    width: 120.52px;
+    height: 38.21px;
+}
+
+.buttons .btn-success:hover {
+    background-color: rgb(11, 170, 32)
 }
 
 .buttons .btn-danger {
     margin-left: 1rem;
+    height: 38.21px;
+    width: 120.52;
 }
 
 .buttons .btn-secondary {
     margin-left: 1rem;
+    height: 38.21px;
+    width: 120.52px;
 }
 
 a {
@@ -329,14 +377,16 @@ ul.messages li {
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
+    border: 0.012rem solid rgba(165, 165, 165, 0.267);
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: 0.375rem;
+    border-radius: 0.200rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    background-color: #eeeeee5e;
+    box-shadow: 2px 2px 9px rgb(221, 221, 221);
 }
 
 
@@ -350,10 +400,7 @@ ul.messages li {
 
 /* Informações do cliente */
 
-.client-information button{
-    margin-top: 0.5rem;
-   
-}
+
 
 .client-information {
     border: 1px solid rgba(128, 128, 128, 0.192);
@@ -545,7 +592,7 @@ ul.messages li {
 
 .btn-links {
     font-size: 19px;
-    padding: 0.5rem;
+    padding: 1.4rem;
     border: none;
     color: rgb(143, 143, 143);
     transition: color 0.2s ease-out 100ms;
@@ -561,17 +608,20 @@ ul.messages li {
 }
 
 .btn-login {
-    font-size: 23px;
+    font-size: 30px;
     padding: 0.2rem;
-    border: none;
-    color: rgb(252, 252, 252);
+    border: 1px solid black;
+    border-color: rgba(14, 17, 224, 0.603);
+    color: rgb(0, 0, 0);
     transition: background-color 0.2s ease-out 100ms;
     padding-left: 1.0rem;
     padding-right: 1.0rem;
-    background-color:rgb(27, 87, 177);
+    background-color:rgb(255, 255, 255);
     margin: 0 2px;
-    border-radius: 4px;
+    border-radius: 10px;
     margin-right: 10px;
+    width: 220px;
+    height: 55px;
 }
 
 .btn-login:hover {
@@ -617,7 +667,77 @@ footer {
 .image-banner {
     display: flex;
     justify-content: center;
-    padding-top: 2.7rem;
+    padding-top: 4.7rem;
     width: 100%;
 }
 
+.image-banner img {
+    box-shadow: 3px 3px 50px rgb(104, 118, 245);
+}
+
+/* Login e registro */
+
+.form-control1 {
+    font-size: 20px;
+    padding: 0 40px;
+}
+
+.form-control1 input {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 0.8rem 1.2rem;;
+    box-shadow: 1px 1px 6px #0000001c;
+    border: none;
+    
+}
+
+.form-control1 input:hover {
+    background-color: rgba(187, 187, 230, 0.041);
+}
+
+.form-control1 input:focus-visible {
+    outline: 1px solid rgba(36, 60, 194, 0.664);
+
+}
+
+.form-control1 select {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 0.8rem 1.2rem;;
+    box-shadow: 1px 1px 6px #0000001c;
+    border: none;
+    
+}
+
+.form-control1 select:hover {
+    background-color: rgba(187, 187, 230, 0.041);
+}
+
+.form-control1 select:focus-visible {
+    outline: 1px solid rgba(36, 60, 194, 0.664);
+
+}
+
+.form-control1 label {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 1.1rem;
+}
+
+.form-control1 span {
+    margin-top: 0;
+}
+
+.form-register .btn-block {
+    margin-top: 2rem;
+}
+
+.form-register p {
+    padding-bottom: 2rem;
+}
